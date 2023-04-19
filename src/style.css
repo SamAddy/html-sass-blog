@@ -1,0 +1,48 @@
+header {
+  width: 100%;
+  height: 60px;
+  margin-top: 20px;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 100%;
+  padding: 0 1rem;
+}
+
+.navbar-brand {
+  text-decoration: none;
+  color: #fff;
+  font-family: Georgia, "Times New Roman", Times, serif;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-items {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-link {
+  font-size: 20px;
+  color: #fff;
+  text-decoration: none;
+}
+
+.nav-link.active,
+.nav-link:hover {
+  border-bottom: 2px solid #ff8000;
+}
+
+body {
+  background-color: rgb(0, 0, 0);
+}
+
+/*# sourceMappingURL=style.css.map */
