@@ -6,3 +6,7 @@ body {
     background-color: header.$background-color;
     // margin: 0;
 }
+
+p {
+    color: header.$primary-color;
+}
