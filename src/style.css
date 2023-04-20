@@ -41,6 +41,10 @@ nav ul {
   border-bottom: 2px solid #ff8000;
 }
 
+body {
+  text-rendering: optimizeSpeed;
+}
+
 .hero {
   background-image: url("../src/images/hero-image.jpg");
   background-repeat: no-repeat;
@@ -77,42 +81,66 @@ nav ul {
   grid-column: span 2;
 }
 
-.article__featured__post {
+.grid--acticle--post {
   display: grid;
+  grid-template-areas: "one two two three" "four two two five";
   gap: 1em;
-  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
 }
 
-.article__inner {
-  position: relative;
-}
-
-.article__inner img {
-  display: block;
-  max-width: 100%;
-  height: auto;
+.grid--article--inner {
   border-radius: 20px;
 }
 
-.article__content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  color: #fff;
-  width: 100%;
-  text-align: center;
+.grid--article--inner:nth-child(1) {
+  grid-area: one;
+  background-color: brown;
+  background-image: url("../../images/brick-puzzle.jpg");
 }
 
-@media screen and (max-width: 768px) {
-  .article__featured__post {
-    grid-template-columns: 1fr;
-  }
-  .article__inner {
-    margin-bottom: 30px;
-  }
+.grid--article--inner:nth-child(2) {
+  grid-area: two;
+  background-color: rgb(42, 165, 104);
 }
+
+.grid--article--inner:nth-child(3) {
+  grid-area: three;
+  background-color: rgb(75, 42, 165);
+}
+
+.grid--article--inner:nth-child(4) {
+  grid-area: four;
+  background-color: rgb(175, 221, 67);
+}
+
+.grid--article--inner:nth-child(5) {
+  grid-area: five;
+  background-color: rgb(126, 24, 71);
+}
+
+.flex--article--post {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.flex--article--normal {
+  width: 400px;
+  height: 450px;
+  margin: 15px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s, box-shadow 0.2s;
+  background-color: burlywood;
+  border-radius: 20px;
+}
+
+.flex--article--medium {
+  width: 700px;
+  background-color: aquamarine;
+  margin: 15px;
+  border-radius: 20px;
+}
+
 .social__link {
   color: #fff;
   text-decoration: none;
