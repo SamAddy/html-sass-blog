@@ -41,17 +41,11 @@ nav ul {
   border-bottom: 2px solid #ff8000;
 }
 
-.top {
-  width: 400px;
-  height: 500px;
-  background-color: aqua;
-}
-
 .hero {
   background-image: url("../src/images/hero-image.jpg");
   background-repeat: no-repeat;
   background-size: cover;
-  height: 70vh;
+  height: 60vh;
   display: flex;
   align-items: center;
 }
@@ -79,6 +73,46 @@ nav ul {
   margin-bottom: 40px;
 }
 
+.grid-col-span-2 {
+  grid-column: span 2;
+}
+
+.article__featured__post {
+  display: grid;
+  gap: 1em;
+  grid-template-columns: repeat(4, 1fr);
+  justify-content: center;
+}
+
+.article__inner {
+  position: relative;
+}
+
+.article__inner img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.article__content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: #fff;
+  width: 100%;
+  text-align: center;
+}
+
+@media screen and (max-width: 768px) {
+  .article__featured__post {
+    grid-template-columns: 1fr;
+  }
+  .article__inner {
+    margin-bottom: 30px;
+  }
+}
 .social__link {
   color: #fff;
   text-decoration: none;
