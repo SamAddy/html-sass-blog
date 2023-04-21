@@ -1,170 +1,72 @@
-// @use "components/header";
-$primary-color: #fff;
-$neutral-color: #cfcbca;
-$border-radius: 20px;
+@use "../variables/space";
 
-body {
-  text-rendering: optimizeSpeed;
+@use "../variables/colors";
+
+@import "../mixins/postcards";
+
+p {
+    color: colors.$light-text-color;
 }
-.hero {
-    background-image: url('../src/images/hero-image.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
-    height: 60vh;
+.featured__article__grid {
+    display: grid;
+    grid-template-areas: 
+    "card1 card1 card2 card3"
+    "card1 card1 card2 card3"
+    "card1 card1 card4 card5"
+    "card1 card1 card4 card5";
+    gap: 1em;
+    padding: 50px;
+    // padding-left: 30px;
+    // padding-right: 30px;
+}
+
+@each $card in space.$cards {
+    .article__postcard:nth-of-type(#{$card}) {
+        grid-area: card#{$card};
+        background-color: #b12d4e;
+        @if (file-exists("../../images/card-#{$card}.jpg")) {
+            background-image: url("./images/card-#{$card}.jpg");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center center;
+            border-radius: 20px;
+        }
+        & btn-light {
+            border-radius: 20px;
+        }  
+        &:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+            transition: ease-in-out;
+        } 
+
+        // & .article__postcard__content {
+        //     // padding: 1em;
+        // }
+
+        @include postcard
+    }
+    
+
+}
+
+.article__postcard__large {
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 1em;
+    justify-content: center;
+    // padding-left: 70px;
+    // padding-right: 70px;
+    article {
+        // width: 800px;
+        height: 400px;
+        // background-color: rgb(153, 189, 88);
+        background-image: url(./images/card-6.jpg);
+        border-radius: space.$card-border-radius;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center center;
+        padding: 5em;
+    }
+ 
 }
-
-.hero__inner {
-    width: 100%;
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-    box-sizing: border-box;
-}
-
-.hero__content {
-    color: $primary-color;
-    text-align: center;
-}
-
-.hero__title {
-    font-size: 48px;
-    margin-bottom: 20px;
-}
-
-.hero__desc {
-    font-size: 24px;
-    margin-bottom: 40px;
-}
-
-.grid-col-span-2 {
-    grid-column: span 2;
-}
-
-// Grid .
-// .article__featured__post {
-//     display: grid;
-//     gap: 1em;
-//     grid-template-columns: repeat(4, 1fr);
-//     justify-content: center;
-// }
-
-// .article__inner {
-//     position: relative;
-//   }
-
-// .article__inner img {
-//     display: block;
-//     max-width: 100%;
-//     height: auto;
-//     border-radius: 20px;
-//   }
-
-//   .article__content {
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     transform: translate(-50%, -50%);
-//     color: $primary-color;
-//     width: 100%;
-//     text-align: center;
-//   }
-
-// .article__meta {
-//     display: flex;
-//     justify-content: end;
-//     align-items: center;
-//     margin-bottom: 10px;
-//   }
-
-// .article__title a {
-//     color: #fff;
-//     text-decoration: none;
-//   }
-
-// .article__excerpt {
-//     font-size: 18px;
-//     line-height: 1.4;
-//     margin-bottom: 20px;
-//   }
-
-// .author__author {
-//     font-size: 16px;
-//   }
-
-
-// New Grid for article post
-.grid--acticle--post {
-  display: grid;
-  grid-template-areas: 
-  "one two two three"
-  "four two two five";
-  gap: 1em;
-  justify-content: center;
-}
-
-.grid--article--inner {
-  border-radius: $border-radius;
-}
-.grid--article--inner:nth-child(1) {
-  grid-area: one;
-  background-color: brown;
-  background-image: url('../../images/brick-puzzle.jpg');
-}
-
-.grid--article--inner:nth-child(2) {
-  grid-area: two;
-  background-color: rgb(42, 165, 104);
-}
-
-.grid--article--inner:nth-child(3) {
-  grid-area: three;
-  background-color: rgb(75, 42, 165);
-}
-
-.grid--article--inner:nth-child(4) {
-  grid-area: four;
-  background-color: rgb(175, 221, 67);
-}
-
-.grid--article--inner:nth-child(5) {
-  grid-area: five;
-  background-color: rgb(126, 24, 71);
-}
-
-.flex--article--post {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.flex--article--normal {
-  width: 400px;
-  height: 450px;
-  margin:  15px;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  transition: transform 0.2s, box-shadow 0.2s;
-  background-color: burlywood;
-  border-radius: $border-radius;
-}
-
-.flex--article--medium {
-  width: 700px;
-  // height: auto;
-  background-color: aquamarine;
-  margin: 15px;
-  border-radius: $border-radius;
-}
-
-
-
-
-// @media screen and (max-width: 768px) {
-//   .article__featured__post {
-//       grid-template-columns: 1fr;
-//   }
-//   .article__inner {
-//       margin-bottom: 30px;
-//   }
-// }

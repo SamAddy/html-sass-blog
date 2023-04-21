@@ -1,12 +1,11 @@
 @use "components/header";
 @use "components/main";
 @use "components/footer";
+@use "variables/colors";
+@use "mixins/postcards";
 
 body {
-    background-color: header.$background-color;
-    // margin: 0;
+    background-color:colors.$dark-bg-color;
+    margin: 4em;
 }
 
-p {
-    color: header.$primary-color;
-}

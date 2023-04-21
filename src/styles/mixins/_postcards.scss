@@ -1,0 +1,35 @@
+@use "../variables/fonts";
+@use "../variables/space";
+
+@use "../variables/colors";
+
+@mixin postcard {
+    border-radius: 20px;
+    
+    & button {
+        border-radius: 20px;
+        text-transform: uppercase;
+        font-size: 10px;
+        font-style: bold;
+        border: none;
+        margin: 0.2rem;
+        background-color: black;
+        color: colors.$light-text-color;
+        
+    }
+    
+    & div {
+        color: colors.$light-text-color;
+        padding: 1em;
+    }
+    & a {
+        text-decoration: none;
+        font-weight: 900;
+        font-size: fonts.$h2-medium;
+        color: colors.$light-text-color;
+    }
+    & p {
+        font-size: fonts.$font-normal;
+        font-weight: 900;
+    }
+}
