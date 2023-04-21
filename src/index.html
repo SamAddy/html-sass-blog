@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>The Anchor</title>
-
     <link rel="stylesheet" href="style.css">
     <!-- Ionicons -->
     <link href="https://unpkg.com/ionicons@4.2.2/dist/css/ionicons.min.css" rel="stylesheet">
-
 </head>
 <body>
     <header>
-        <nav class="navbar">
+        <div class="navbar-brand-name">
             <h1><a class="navbar-brand" href="/">ANCHOR</a></h1>
-            <ul class="nav justify-content-center">
+        </div>
+        <nav class="navbar">
+            <ul class="nav">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#">Home</a>
                 </li>
@@ -31,307 +31,96 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#">Newsletter</a>
                 </li>
-                <li>
-                    <a href="#"><ion-icon name="search" size="large"></ion-icon></a>
-                    <!-- <button type="submit"><i class="nav__icon nav__icon-search ion ion-md-search"></i></button> -->
-                </li>  
+                <i><ion-icon name="search"></ion-icon></i>
+                 
             </ul> 
         </nav>
     </header>
     <main>
-        <section class="hero">
-            <div class="hero__inner">
-                <div class="hero__image">
-                    <!-- <img class="lazy" src="../src/images/hero-image.jpg" alt="The Anchor"> -->
+        <section class="featured__article__grid">
+            <article class="article__postcard">
+                <div class="pinned__article">
+                    <button>Pinned</button>
                 </div>
-                <div class="hero__content">
-                    <h1 class="hero__title">The Anchor</h1>
-                    <p class="hero__desc">Keep building the belief.</p>
+                <div class="article__postcard__content">
+                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
+                    <p class="article__author">by SamAddy</p>
                 </div>
-            </div>
+            </article>
+            <article class="article__postcard">
+                <div class="pinned__article">
+                    <button>Pinned</button>
+                </div>
+                <div class="article__postcard__content">
+                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
+                    <p class="article__author">by SamAddy</p>
+                </div>
+            </article>
+            <article class="article__postcard">
+                <div class="pinned__article">
+                    <button>Pinned</button>
+                </div>
+                <div class="article__postcard__content">
+                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
+                    <p class="article__author">by SamAddy</p>
+                </div>
+            </article>
+            <article class="article__postcard">
+                <div class="pinned__article">
+                    <button>Pinned</button>
+                </div>
+                <div class="article__postcard__content">
+                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
+                    <p class="article__author">by SamAddy</p>
+                </div>
+            </article>
+            <article class="article__postcard">
+                <div class="pinned__article">
+                    <button>Pinned</button>
+                </div>
+                <div class="article__postcard__content">
+                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
+                    <p class="article__author">by SamAddy</p>
+                </div>
+            </article>
         </section>
-        <!-- Grid post -->
-        <!-- <section class="article__featured__post">
-            <article class="article__inner grid-col-span-2">
-                <img src="../src/images/brick-puzzle.jpg" alt="Finding Strength in the Anchor">
-                <a href=""><ion-icon name="star-outline"></ion-icon></a>
-                <div class="article__content">
-                    <div class="article__meta">
-                        <p class="article__minutes">3 min read</p>
-                        <time class="article__date" datetime="2023-04-20">April 20, 2023</time>
-                    </div>
-                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
-                    <p class="article__excerpt">
-                        Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues, we all face difficulties at some point in our lives.
-                    </p>
-                    <div class="article__bottom">
-                        <p class="author__author">by SamAddy</p>
-                    </div>
+        <section class="article__postcard__large">
+            <article class="article__no-except">
+                <div class="buttons">
+                    <button>Case Study</button>
+                    <button>Open Space</button>
+                </div>
+                <div class="article__info">
+                    <h2 class="article__title"><a href="">The perfect place that helps you get work done in peace</a></h2>
+                    <p class="article__author">by SamAddy</p>
                 </div>
             </article>
-            <article class="article__inner  grid-col-span-2">
-                <img src="../src/images/hero-image.jpg" alt="Finding Strength in the Anchor">
-                <a href=""><ion-icon name="star-outline"></ion-icon></a>
-                <div class="article__content">
-                    <div class="article__meta">
-                        <p class="article__minutes">3 min read</p>
-                        <time class="article__date" datetime="2023-04-20">April 20, 2023</time>
-                    </div>
-                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
-                    <p class="article__excerpt">
-                        Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues, we all face difficulties at some point in our lives.
+            <article class="article__no-except">
+                <div class="buttons">
+                    <button>Case Study</button>
+                    <button>Open Space</button>
+                </div>
+                <div class="article__info">
+                    <h2 class="article__title"><a href="">The perfect place that helps you get work done in peace</a></h2>
+                    <p class="article__author">by SamAddy</p>
+                    <p class="article__except">
+                        Lorem ipsum dolor sit, amet consectetur adipisicing elit. Esse ipsam rem provident earum fugit quis, odit odio, omnis ut consequatur perspiciatis vero, dolorem officiis. Porro, laudantium? Fugiat incidunt possimus nemo.
                     </p>
-                    <div class="article__bottom">
-                        <p class="author__author">by SamAddy</p>
-                    </div>
                 </div>
             </article>
-            <article class="article__inner">
-                <a href=""><ion-icon name="star-outline"></ion-icon></a>
-                <img src="../src/images/light-at-the-end.jpg" alt="Finding Strength in the Anchor">
-                <div class="article__content">
-                    <div class="article__meta">
-                        <p class="article__minutes">3 min read</p>
-                        <time class="article__date" datetime="2023-04-20">April 20, 2023</time>
-                    </div>
-                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
-                    <p class="article__excerpt">
-                        Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues, we all face difficulties at some point in our lives.
-                    </p>
-                    <div class="article__bottom">
-                        <p class="author__author">by SamAddy</p>
-                    </div>
+            <article class="article__no-except">
+                <div class="buttons">
+                    <button>Case Study</button>
+                    <button>Open Space</button>
+                </div>
+                <div class="article__info">
+                    <h2 class="article__title"><a href="">The perfect place that helps you get work done in peace</a></h2>
+                    <p class="article__author">by SamAddy</p>
                 </div>
             </article>
-            <article class="article__inner">
-                <img src="../src/images/hero-image.jpg" alt="Finding Strength in the Anchor">
-                <a href=""><ion-icon name="star-outline"></ion-icon></a>
-                <div class="article__content">
-                    <div class="article__meta">
-                        <p class="article__minutes">3 min read</p>
-                        <time class="article__date" datetime="2023-04-20">April 20, 2023</time>
-                    </div>
-                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
-                    <p class="article__excerpt">
-                        Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues, we all face difficulties at some point in our lives.
-                    </p>
-                    <div class="article__bottom">
-                        <p class="author__author">by SamAddy</p>
-                    </div>
-                </div>
-            </article>
-            <article class="article__inner">
-                <img src="../src/images/hope.jpg" alt="Finding Strength in the Anchor">
-                <a href=""><ion-icon name="star-outline"></ion-icon></a>
-                <div class="article__content">
-                    <div class="article__meta">
-                        <p class="article__minutes">3 min read</p>
-                        <time class="article__date" datetime="2023-04-20">April 20, 2023</time>
-                    </div>
-                    <h2 class="article__title"><a href="#">Finding Strength in the Anchor</a></h2>
-                    <p class="article__excerpt">
-                        Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues, we all face difficulties at some point in our lives.
-                    </p>
-                    <div class="article__bottom">
-                        <p class="author__author">by SamAddy</p>
-                    </div>
-                </div>
-            </article>
-        </section> -->
-        <section class="featured--article--post">
-            <section class="grid--acticle--post">
-                <article class="grid--article--inner">
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="grid--article--inner">
-                    <!-- <img src="../src/images/hope.jpg" alt="Finding Strength in the Anchor"> -->
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="grid--article--inner">
-                    <!-- <img src="../src/images/hope.jpg" alt="Finding Strength in the Anchor"> -->
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="grid--article--inner">
-                    <!-- <img src="../src/images/hope.jpg" alt="Finding Strength in the Anchor"> -->
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="grid--article--inner">
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-              </section>
-              <section class="flex--article--post">
-                <article class="flex--article--normal">
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="flex--article--normal">
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="flex--article--normal">
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-              </section>
-              <section class="flex--article--post">
-                <article class="flex--article--medium">
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-                <article class="flex--article--medium">
-                    <div class="article--content">
-                        <div class="article--meta">
-                            <p class="article--minutes">3 min read</p>
-                            <time class="article--date" datetime="2023-04-20">April 20, 2023</time>
-                        </div>
-                        <h2 class="article--title"><a href="#">Finding Strength in the Anchor</a></h2>
-                        <p class="article--excerpt">
-                            Life is full of challenges. Whether it's health problems, financial struggles, or relationship issues,
-                            we all face difficulties at some point in our lives.
-                        </p>
-                        <div class="article--bottom">
-                            <p class="author--author">by SamAddy</p>
-                        </div>
-                    </div>
-                </article>
-              </section>
         </section>
-        
     </main>
-    <footer>
-        <section class="footer_data">
-            <p class="copyright">2023 &copy; <a href="/">The Anchor</a>. Crafted & Designed by <a href="https://samaddy.github.io">SamAddy</a>.</p>
-        </section>
-        <section class="social">
-            <ul class="social__list">
-                <li class="social__item">
-                    <a class="social__link" href="https://twitter.com" aria-label="social icon"><ion-icon name="logo-twitter" size="large"></ion-icon></i></a>
-                </li>
-                <li class="social__item">
-                    <a class="social__link" href="https://youtube.com" aria-label="social icon"><ion-icon name="logo-youtube" size="large"></ion-icon></i></a>
-                </li>
-                <li class="social__item">
-                    <a class="social__link" href="https://github.com" aria-label="social icon"><ion-icon name="logo-github" size="large"></ion-icon></a>
-                </li>
-                <li class="social__item">
-                    <a class="social__link" href="https://samaddy.github.io" aria-label="social icon"><ion-icon name="globe-outline" size="large"></ion-icon></a>
-                </li>
-            </ul>
-        </section> 
-    </footer>
+    <footer></footer>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
