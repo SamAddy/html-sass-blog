@@ -4,32 +4,40 @@
 @use "../variables/colors";
 
 @mixin postcard {
-    border-radius: 20px;
+    border-radius: space.$card-border-radius;
     
     & button {
-        border-radius: 20px;
+        border-radius: space.$card-border-radius;
         text-transform: uppercase;
         font-size: 10px;
         font-style: bold;
         border: none;
-        margin: 0.2rem;
-        background-color: black;
-        color: colors.$light-text-color;
-        
+        padding: 0.4em;
+        font-weight: fonts.$font-weight;
+        cursor: pointer;
+    }
+    h2 {
+        font-weight: bolder;
     }
     
-    & div {
-        color: colors.$light-text-color;
-        padding: 1em;
-    }
     & a {
         text-decoration: none;
-        font-weight: 900;
+        font-weight: fonts.$font-weight;
         font-size: fonts.$h2-medium;
         color: colors.$light-text-color;
     }
     & p {
         font-size: fonts.$font-normal;
-        font-weight: 900;
+        font-weight: fonts.$font-weight;
+    }
+}
+
+@mixin transparent-btn {
+
+    & button {
+        border-radius: 20px;
+        padding: 0.4em;
+        background-color: transparent;
+        text-transform: uppercase;
     }
 }

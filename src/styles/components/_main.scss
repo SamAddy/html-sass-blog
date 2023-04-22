@@ -7,6 +7,7 @@
 p {
     color: colors.$light-text-color;
 }
+
 .featured__article__grid {
     display: grid;
     grid-template-areas: 
@@ -29,44 +30,138 @@ p {
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center center;
-            border-radius: 20px;
-        }
-        & btn-light {
-            border-radius: 20px;
-        }  
+            border-radius: space.$card-border-radius;
+            padding: 30px;
+        } 
+        // @else {
+            
+        // }
+
         &:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             transition: ease-in-out;
         } 
 
-        // & .article__postcard__content {
-        //     // padding: 1em;
-        // }
+        & .btn-light {
+            background-color: colors.$light-text-color;
+            color: colors.$dark-bg-color;
+        }  
+        & .btn-dark {
+            background-color: colors.$dark-bg-color;
+            color: colors.$light-text-color;
+        }  
 
         @include postcard
     }
     
-
 }
 
 .article__postcard__large {
     display: flex;
     flex-direction: column;
-    gap: 1em;
+    gap: 2em;
+    max-width: 70%;
     justify-content: center;
-    // padding-left: 70px;
-    // padding-right: 70px;
-    article {
-        // width: 800px;
-        height: 400px;
-        // background-color: rgb(153, 189, 88);
-        background-image: url(./images/card-6.jpg);
-        border-radius: space.$card-border-radius;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center center;
-        padding: 5em;
+
+    @each $card in space.$large-cards {
+        .article__no-except:nth-of-type(#{$card}) {
+            @if (file-exists("../../images/large-card-#{$card}.jpg")) {
+                background-image: url("./images/large-card-#{$card}.jpg");
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: center center;
+                border-radius: space.$card-border-radius;
+    
+                position: relative;
+                padding: 20px;
+
+                @include postcard;
+                @include transparent-btn;
+    
+                & .article__info {
+                    padding: 70px;
+    
+                    & .btn-light-hover {
+                        border: 0.5px solid colors.$primary-color;
+                        color: colors.$light-text-color;
+                        &:hover {
+                            background-color: colors.$primary-color;
+                            color: colors.$light-text-color;
+                        }
+                    }
+        
+                    & .btn-dark-hover {
+                        border: 0.5px solid colors.$dark-bg-color;
+                        color: colors.$dark-bg-color;
+            
+                        &:hover {
+                            background-color: colors.$dark-bg-color;
+                            color: colors.$light-text-color;
+                        }
+                    }
+                }
+              
+            }
+
+            :hover {
+                background-size: 120%;
+                // transform: scale(1.2);
+                // transition: opacity 0.3s ease-in-out;
+            }
+        }
+    
+    
     }
- 
 }
+
+
+
+// .article__postcard__large {
+//     display: flex;
+//     flex-direction: column;
+//     gap: 1em;
+//     justify-content: center;
+//     // padding-left: 70px;
+//     // padding-right: 70px;
+//     article {
+//         position: relative;
+//         padding: 20px;
+//         z-index: 2;
+//         border-radius:0.5rem;
+
+//         max-width:calc(100vw - 2rem);
+//         width:60rem;margin:0 auto;
+//         // height: 60vh;
+//         // background-color: rgb(153, 189, 88);
+//         background-image: url(./images/large-card-3.jpg);
+//         border-radius: space.$card-border-radius;
+//         background-size: cover;
+//         background-repeat: no-repeat;
+//         background-position: center center;
+//         // padding: 5em;
+//         @include postcard;
+//         @include transparent-btn;
+
+//         & .btn-light-hover {
+//             border: 0.5px solid colors.$primary-color;
+//             color: colors.$light-text-color;
+//             &:hover {
+//                 background-color: colors.$primary-color;
+//                 color: colors.$light-text-color;
+//             }
+//         }
+
+//         & .btn-dark-hover {
+//             border: 0.5px solid colors.$dark-bg-color;
+//             color: colors.$dark-bg-color;
+
+//             &:hover {
+//                 background-color: colors.$dark-bg-color;
+//                 color: colors.$light-text-color;
+//             }
+//         }
+
+//     }
+    
+// }
