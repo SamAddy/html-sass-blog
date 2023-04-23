@@ -1,4 +1,114 @@
-.social__link {
-    color: #fff;
-    text-decoration: none;
+@use "../variables/colors";
+@use "../variables/space";
+
+footer {
+    color: colors.$primary-color;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: space.$regular-margin;
+
+    & p {
+        font-size: xx-large;
+        font-weight: 900;
+    }
+
+    & .typing-text {
+        font-size: 1em;
+        font-weight: 600;
+        max-width: fit-content;
+        white-space: nowrap;
+        overflow: hidden;
+        animation: typing 4s steps(30) infinite alternate, blinking 0.1s infinite;
+        border-right: 1px solid colors.$primary-color;
+    }
+
+    & form {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+
+        & input {
+            text-align: center;
+            border: none;
+            width: 30em;
+            border-bottom: 1px solid colors.$primary-color;
+            background-color: transparent;
+            transition: width 1s linear;
+            margin: 20px;
+            &:focus {
+                outline: none;
+                width: 50%;
+                color: colors.$primary-color;
+              }
+
+        }
+
+        & button {
+            align-self: center;
+            max-width: fit-content;
+            padding: 32px 35px 31px;
+            border-radius: space.$card-border-radius;
+            background-color: colors.$dark-bg-color;
+            color: colors.$primary-color;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 5px 0 0;
+            cursor: pointer;
+
+            &:hover {
+                background-color: #ffa023;
+            }
+        }
+    }
 }
+
+// footer {
+//     color: colors.$light-text;
+//     display: flex;
+//     flex-direction: column;
+//     max-width: fit-content;
+//     & p {
+//       font-size: 3em;
+//       white-space: nowrap;
+//       overflow: hidden;
+//       animation: typing 4s steps(30) infinite alternate, blinking 0.1s infinite;
+//       border-right: 1px solid white;
+//     }
+//     & form {
+//       display: flex;
+//       justify-content: center;
+//       & input {
+//         background-color: transparent;
+//         border: none;
+//         border-bottom: 1px solid white;
+//         width: 30%;
+//         transition: width 1s linear;
+//         text-align: center;
+//         &:focus {
+//           outline: none;
+//           width: 50%;
+//         }
+//       }
+//     }
+//   }
+  
+
+@keyframes typing {
+    0% {
+      width: 0%;
+    }
+    100% {
+      width: 100%;
+    }
+  }
+  
+  @keyframes blinking {
+    0% {
+      border-right: none;
+    }
+    50% {
+      border-right: 1px solid colors.$primary-color;
+    }
+  }
