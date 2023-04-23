@@ -64,25 +64,31 @@ p {
     display: flex;
     flex-direction: column;
     gap: 2em;
-    // max-width: 70%;
     justify-content: center;
+
 
     @each $card in space.$large-cards {
 
         article:nth-of-type(#{$card}) {
             @if (file-exists("../../images/large-card-#{$card}.jpg")) {
                 background-image: url("./images/large-card-#{$card}.jpg"),linear-gradient(rgba(50, 51, 1, 0.402),#e4d22d80);
-                background-blend-mode: darken;
+                background-blend-mode: saturation;
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center center;
                 border-radius: space.$card-border-radius;
-                transition: all 0.3s ease;
+                background-size: 100%;
+                transition: all 0.5s ease-in-out;
                 
                 max-width:calc(100vw - 4rem);
                 width:70rem;
                 margin: auto auto;
                
+                & :hover {
+                    background-size: 120%;
+                    // transform: scale(1.2);
+                    // transition: opacity 0.3s ease-in-out;
+                }
 
                 @include postcard;
                 @include transparent-btn;
@@ -136,16 +142,13 @@ p {
                     h2, a, p {
                         color: colors.$dark-bg-color;
                         font-size: 1.8em;
-
                     }
+                    
                   }
             }
-            :hover {
-                background-size: 120%;
-                // transform: scale(1.2);
-                // transition: opacity 0.3s ease-in-out;
-            }
-        }
+            
+        }  
+       
         
     
     }
