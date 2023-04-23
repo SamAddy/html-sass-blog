@@ -12,13 +12,16 @@ p {
     display: grid;
     grid-template-areas: 
     "card1 card1 card2 card3"
-    "card1 card1 card2 card3"
-    "card1 card1 card4 card5"
     "card1 card1 card4 card5";
     gap: 1em;
     padding: 50px;
     // padding-left: 30px;
     // padding-right: 30px;
+
+    // work on this later
+    @media screen and (max-width: 40em) {
+        background-color: aqua;
+    }
 }
 
 @each $card in space.$cards {
@@ -61,20 +64,25 @@ p {
     display: flex;
     flex-direction: column;
     gap: 2em;
-    max-width: 70%;
+    // max-width: 70%;
     justify-content: center;
 
     @each $card in space.$large-cards {
-        .article__no-except:nth-of-type(#{$card}) {
+
+        article:nth-of-type(#{$card}) {
             @if (file-exists("../../images/large-card-#{$card}.jpg")) {
-                background-image: url("./images/large-card-#{$card}.jpg");
+                background-image: url("./images/large-card-#{$card}.jpg"),linear-gradient(rgba(50, 51, 1, 0.402),#e4d22d80);
+                background-blend-mode: darken;
                 background-size: cover;
                 background-repeat: no-repeat;
                 background-position: center center;
                 border-radius: space.$card-border-radius;
-    
-                position: relative;
-                padding: 20px;
+                transition: all 0.3s ease;
+                
+                max-width:calc(100vw - 4rem);
+                width:70rem;
+                margin: auto auto;
+               
 
                 @include postcard;
                 @include transparent-btn;
@@ -84,7 +92,7 @@ p {
     
                     & .btn-light-hover {
                         border: 0.5px solid colors.$primary-color;
-                        color: colors.$light-text-color;
+                        color: colors.$primary-color;
                         &:hover {
                             background-color: colors.$primary-color;
                             color: colors.$light-text-color;
@@ -100,68 +108,47 @@ p {
                             color: colors.$light-text-color;
                         }
                     }
-                }
-              
-            }
 
+                    & .article__author {
+                        padding-top: space.$regular-margin;
+                        padding-bottom: space.$regular-margin;
+                    }
+
+                    & .article__title {
+                        & span {
+                            font-size: 1.8em;
+                            visibility: hidden;
+                        }
+                        &:hover {
+                            span {
+                               visibility: visible;
+                            }
+                        }
+                    }
+
+                }
+
+                @if $card % 2 == 0{
+                    // Even card styling
+                    background-image: url("./images/large-card-#{$card}.jpg"),linear-gradient(rgba(243, 247, 10, 0.402),#e4d22d80);
+                    background-blend-mode: overlay;
+                    color: colors.$dark-bg-color;
+                    h2, a, p {
+                        color: colors.$dark-bg-color;
+                        font-size: 1.8em;
+
+                    }
+                  }
+            }
             :hover {
                 background-size: 120%;
                 // transform: scale(1.2);
                 // transition: opacity 0.3s ease-in-out;
             }
         }
-    
+        
     
     }
-}
 
-
-
-// .article__postcard__large {
-//     display: flex;
-//     flex-direction: column;
-//     gap: 1em;
-//     justify-content: center;
-//     // padding-left: 70px;
-//     // padding-right: 70px;
-//     article {
-//         position: relative;
-//         padding: 20px;
-//         z-index: 2;
-//         border-radius:0.5rem;
-
-//         max-width:calc(100vw - 2rem);
-//         width:60rem;margin:0 auto;
-//         // height: 60vh;
-//         // background-color: rgb(153, 189, 88);
-//         background-image: url(./images/large-card-3.jpg);
-//         border-radius: space.$card-border-radius;
-//         background-size: cover;
-//         background-repeat: no-repeat;
-//         background-position: center center;
-//         // padding: 5em;
-//         @include postcard;
-//         @include transparent-btn;
-
-//         & .btn-light-hover {
-//             border: 0.5px solid colors.$primary-color;
-//             color: colors.$light-text-color;
-//             &:hover {
-//                 background-color: colors.$primary-color;
-//                 color: colors.$light-text-color;
-//             }
-//         }
-
-//         & .btn-dark-hover {
-//             border: 0.5px solid colors.$dark-bg-color;
-//             color: colors.$dark-bg-color;
-
-//             &:hover {
-//                 background-color: colors.$dark-bg-color;
-//                 color: colors.$light-text-color;
-//             }
-//         }
-
-//     }
     
-// }
+}
