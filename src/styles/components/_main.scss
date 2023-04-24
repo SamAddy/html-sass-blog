@@ -6,21 +6,29 @@
 
 p {
     color: colors.$light-text-color;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 .featured__article__grid {
     display: grid;
-    grid-template-areas: 
-    "card1 card1 card2 card3"
-    "card1 card1 card4 card5";
+    grid-template-areas:
+        "card1 card1 card2 card3"
+        "card1 card1 card4 card5";
     gap: 1em;
-    padding: 50px;
+    // padding: 50px;
     // padding-left: 30px;
     // padding-right: 30px;
 
-    // work on this later
-    @media screen and (max-width: 40em) {
-        background-color: aqua;
+    // TODO
+    @media screen and (max-width: 33em) {
+       max-width: 100%;
+        background-color: bisque;
+        grid-template-areas:
+        "card1 card2"
+        "card1 card4"
+        "card3 card5";
+        // "card1 card1 card2 card3"
+        // "card1 card1 card4 card5";
     }
 }
 
@@ -35,29 +43,25 @@ p {
             background-position: center center;
             border-radius: space.$card-border-radius;
             padding: 30px;
-        } 
+        }
         // @else {
-            
-        // }
 
+        // }
         &:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
             transition: ease-in-out;
-        } 
-
+        }
         & .btn-light {
             background-color: colors.$light-text-color;
             color: colors.$dark-bg-color;
-        }  
+        }
         & .btn-dark {
             background-color: colors.$dark-bg-color;
             color: colors.$light-text-color;
-        }  
-
+        }
         @include postcard
     }
-    
 }
 
 .article__postcard__large {
@@ -65,61 +69,55 @@ p {
     flex-direction: column;
     gap: 2em;
     justify-content: center;
-
+    margin-top: space.$regular-margin;
+    margin-bottom: space.$regular-margin;
 
     @each $card in space.$large-cards {
-
         article:nth-of-type(#{$card}) {
             @if (file-exists("../../images/large-card-#{$card}.jpg")) {
-                background-image: url("./images/large-card-#{$card}.jpg"),linear-gradient(rgba(50, 51, 1, 0.402),#e4d22d80);
+                background-image: url("./images/large-card-#{$card}.jpg"),
+                linear-gradient(rgba(50, 51, 1, 0.402), #e4d22d80);
                 background-blend-mode: saturation;
-                background-size: cover;
-                background-repeat: no-repeat;
-                background-position: center center;
                 border-radius: space.$card-border-radius;
-                background-size: 100%;
+                @include background-img;
                 transition: all 0.5s ease-in-out;
-                
-                max-width:calc(100vw - 4rem);
-                width:70rem;
+
+                max-width: calc(100vw - 4rem);
+                width: 70rem;
                 margin: auto auto;
-               
+
                 & :hover {
                     background-size: 120%;
                     // transform: scale(1.2);
                     // transition: opacity 0.3s ease-in-out;
                 }
-
                 @include postcard;
                 @include transparent-btn;
-    
+
                 & .article__info {
                     padding: 70px;
-    
                     & .btn-light-hover {
                         border: 0.5px solid colors.$primary-color;
                         color: colors.$primary-color;
+
                         &:hover {
                             background-color: colors.$primary-color;
                             color: colors.$light-text-color;
                         }
                     }
-        
                     & .btn-dark-hover {
                         border: 0.5px solid colors.$dark-bg-color;
                         color: colors.$dark-bg-color;
-            
+
                         &:hover {
                             background-color: colors.$dark-bg-color;
                             color: colors.$light-text-color;
                         }
                     }
-
                     & .article__author {
                         padding-top: space.$regular-margin;
                         padding-bottom: space.$regular-margin;
                     }
-
                     & .article__title {
                         & span {
                             font-size: 1.8em;
@@ -127,31 +125,103 @@ p {
                         }
                         &:hover {
                             span {
-                               visibility: visible;
+                                visibility: visible;
                             }
                         }
                     }
-
                 }
 
-                @if $card % 2 == 0{
+                @if $card % 2==0 {
                     // Even card styling
-                    background-image: url("./images/large-card-#{$card}.jpg"),linear-gradient(rgba(243, 247, 10, 0.402),#e4d22d80);
+                    background-image: url("./images/large-card-#{$card}.jpg"),
+                    linear-gradient(rgba(243, 247, 10, 0.402), #e4d22d80);
                     background-blend-mode: overlay;
                     color: colors.$dark-bg-color;
-                    h2, a, p {
+
+                    h2,
+                    a,
+                    p {
                         color: colors.$dark-bg-color;
                         font-size: 1.8em;
                     }
-                    
-                  }
+                }
             }
-            
-        }  
-       
-        
+        }
+    }
+}
+
+.bottom__article__flex {
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin: 20px;
     
+    & article {
+        background-color: aqua;
+        // width: 500px;
+        // height: 589px;
+
+        & .article__content {
+            text-decoration: none;
+            padding: 40px;
+        }
+        @include postcard;
+        @include transparent-btn;
+
+        &:hover {
+            background-size: 120%;
+            transition: all ease-in-out;
+        }
+        // &:hover {
+        //     transform: translateY(-5px);
+        //     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+        //     transition: ease-in-out;
+        // }
     }
 
-    
+    article:nth-child(1) {
+        background-image: url("./images/hero-image.jpg"),
+        linear-gradient(rgba(138, 219, 7, 0.76), #fdfdf880);
+        background-blend-mode: color-dodge;
+        
+        @include background-img;
+        
+        
+        & .article__content {
+            h2, p {
+                color: colors.$dark-bg-color;
+
+                & .arrow {
+                    visibility: hidden;
+                }
+
+            }
+            & h2:hover {
+                background-size: 120%;
+                & .arrow {
+                    visibility: visible;
+                }
+            }
+            
+        }
+    } 
+
+    article:nth-child(2) {
+        background-image: url("./images/flex-card-2.jpg"),
+        linear-gradient(rgba(223, 224, 136, 0.402), #e4d22d80);
+        background-blend-mode: darken;
+        @include background-img;
+
+        h2 {
+            & .arrow {
+                visibility: hidden;
+            }
+        }
+        & :hover {
+            background-size: 120%;
+            & .arrow {
+                visibility: visible;
+            }
+        }
+    }
 }

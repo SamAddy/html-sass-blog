@@ -1,5 +1,6 @@
 @use "../variables/colors";
 @use "../variables/fonts";
+@import "../mixins/navbar.scss";
 
 header {
     display: flex;
@@ -8,55 +9,32 @@ header {
     align-items: baseline;
     margin: 2em;
     padding: 0 13px;
-}
 
-.navbar-brand {
-    text-decoration: none;
-    color: colors.$primary-color;
-    font-family: fonts.$font-family-normal;
-}
-
-.navbar {
-    & .nav {
-        list-style-type: none;
-        display: flex;
-        gap: 2em;
-        align-items: baseline;
-    }
-    & a {
+    .navbar-brand {
         text-decoration: none;
-        color: colors.$light-text-color;
-        font-size: fonts.$font-normal;
-        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
-        font-weight: 800;
-        font-style: bold;
-        margin-bottom: 0.5em;
-        &::before {
-            position: absolute;
-            transition-timing-function: ease;
-            transition-duration: .3s;
-        }
-        &:hover::after {
-            content: "";
-            height: 0.3em;
-            width: 0.3em;
-            border-radius: 50%;
-            background-color: colors.$not-active-link;
-            position: absolute;
-        }
-        & .active::after {
-            height: 0.4em;
-            width: 0.4em;
-            border-radius: 50%;
-            background-color: colors.$active-link;
-            position: absolute;
+        color: colors.$primary-color;
+        font-family: fonts.$font-family-normal;
+    }
+    
+    .header--navbar {
+        @include navbar;
+    }
+
+    @media screen and (min-width:22em) {
+        .header--navbar {
+            visibility: collapse;
         }
     }
-    & i {
-        color: colors.$light-text-color;
+    
+    @media screen and (min-width:46em) {
+        .header--navbar {
+            visibility: visible;
+        }
     }
     
 }
+
+
 
 
 
