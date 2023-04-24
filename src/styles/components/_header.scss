@@ -25,6 +25,12 @@ header {
             visibility: collapse;
         }
     }
+
+    @media screen and (min-width:39em) {
+        .header--navbar {
+            visibility: collapse;
+        }
+    }
     
     @media screen and (min-width:46em) {
         .header--navbar {
@@ -33,65 +39,3 @@ header {
     }
     
 }
-
-
-
-
-
-
-
-// ul.nav {
-//     display: flex;
-//     gap: 2em; 
-// }
-// header {
-//     width: 100%;
-//     margin: 2em;
-// }
-
-// background-image: url("https://i.postimg.cc/fLkQfnD4/737d2bb02f06848d227431a07c86239e.jpg"), linear-gradient(rgba(161, 102, 60, 0.402),#e4d22d80);
-//   background-blend-mode: overlay;
-// background-size:contain;
-
-
-// header {
-//     width: 100%;
-//     margin: 2em;
-// }
-
-// .navbar {
-//     display: flex;
-//     justify-content: space-around;
-//     align-items: center;
-//     height: 100%;
-//     padding: 0 1rem;
-// }
-
-// .navbar-brand {
-//     text-decoration: none;
-//     color: $primary-color;
-//     font-family: Georgia, 'Times New Roman', Times, serif;
-// }
-
-// nav ul {
-//     list-style-type: none;
-//     display: flex;
-//     gap: 20px;
-// }
-
-// .nav-items {
-//     display: flex;
-//     align-items: center;
-//     gap: 1rem;
-// }
-
-// .nav-link {
-//     font-size: $font-normal;
-//     color: $primary-color;
-//     text-decoration: none;
-// }
-
-// .nav-link.active,
-// .nav-link:hover {
-//   border-bottom: 2px solid $link-hover;
-// }
