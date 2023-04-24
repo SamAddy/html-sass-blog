@@ -1,0 +1,44 @@
+@use "../variables/colors";
+
+@use "../variables/fonts";
+
+@mixin navbar {
+    & .nav {
+        list-style-type: none;
+        display: flex;
+        gap: 1em;
+        align-items: baseline;
+    }
+    & .nav-link {
+        text-decoration: none;
+        color: colors.$light-text-color;
+        font-size: fonts.$font-normal;
+        font-family: 'Open Sans', 'Helvetica Neue', sans-serif;
+        font-weight: 800;
+        font-style: bold;
+       
+        &::before {
+            position: absolute;
+            transition-timing-function: ease;
+            transition-duration: .3s;
+        }
+        &:hover::after {
+            content: "";
+            height: 0.3em;
+            width: 0.3em;
+            border-radius: 50%;
+            background-color: colors.$not-active-link;
+            position: absolute;
+        }
+        & .active::after {
+            height: 0.4em;
+            width: 0.4em;
+            border-radius: 50%;
+            background-color: colors.$active-link;
+            position: absolute;
+        }
+    }
+    & i {
+        color: colors.$light-text-color;
+    } 
+}
